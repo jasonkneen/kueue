@@ -5,14 +5,16 @@
 I was working on an app that needed to be able to do some background tasks; uploading images to a server. I wanted a background uploader but wanted to make it generic so it could carry out any function and handle next, retry and cancellation of tasks.
 
 ## Quick Start
-* [Download the latest version](https://github.com/jasonkneen/kueue).
+* [Download the latest version](https://github.com/jasonkneen/kueue/kueue.js).
 * Place in your lib folder
 
-Wherever you want to initialise the API interface, put this:-
+Wherever you want to initialise it, put this:-
 
 ```javascript
 var kueue = require("kueue");
 var queue = new kueue();
+
+(if you're using Titanium for example, you could assign it to Alloy.Globals.queue)
 
 // simulates a REST call with timeout -- say uploading an image
 queue.add("myFirstTask", function(status, next, retry, cancel) {
