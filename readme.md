@@ -29,6 +29,12 @@ queue.add("mySecondTask", function(status, next, retry, cancel) {
     }, 3000);
 });
 
+// the onSuccess function is called whenever a successful task is processed
+// the status object returns the id specified + the remaining current length
+queue.onSuccess(function(status) {
+    console.log(status.id + " processed successfully - " + status.length + " items left");
+});
+
 queue.start();
 ```
 When adding tasks, you wrap your task in a function that can receive four parameters; status, next, retry, cancel.
