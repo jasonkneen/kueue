@@ -14,7 +14,7 @@ Wherever you want to initialise it, put this:-
 var kueue = require("kueue");
 var queue = new kueue();
 
-(if you're using Titanium for example, you could assign it to Alloy.Globals.queue)
+//if you're using Titanium for example, you could assign it to Alloy.Globals.queue
 
 // simulates a REST call with timeout -- say uploading an image
 queue.add("myFirstTask", function(status, next, retry, cancel) {
